@@ -12,9 +12,10 @@ class Interfaz {
     const elemento = document.createElement("div");
     elemento.innerHTML = `<div class="card text-center mb-4">
     <div class="card-body">
-      <strong>Nombre</strong>:Nombre <strong>Apellido</strong>: Apellido
-      <strong>Documento</strong>: Documento
-      <a href="#" class="btn btn-danger" name:="eliminar">eliminar</a>
+      <strong>Nombre</strong>:${persona.nombre}
+       <strong>Apellido</strong>: ${persona.apellido}
+      <strong>Documento</strong>: ${persona.documento}
+      <a href="#" class="btn btn-danger" name="eliminar">eliminar</a>
     </div>
   </div>
 </div>`;
@@ -61,10 +62,10 @@ document.getElementById("personas-form").addEventListener("submit", (e) => {
     interfaz.mostrarmensaje("Persona agregada Correctamente",'warning');
   }
 });
-document.getElementById(".personas-list").addEventListener("click", (e) => {
+document.getElementById("persona-list").addEventListener("click", (e) => {
   if (e.target.name == "eliminar") {
     const interfaz = new Interfaz();
-    interfaz.eliminarPersona(e.target);
+    interfaz.eliminarpersona(e.target);
     interfaz.mostrarmensaje("Elemento eliminado", "danger");
   }
 });
